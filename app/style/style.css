@@ -16,6 +16,9 @@
 
 body {
     background-color: #babf21;
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
 }
 
 main {
@@ -23,12 +26,18 @@ main {
     position: relative;
 }
 
+@media only screen and (max-width: 1000px) { /* i-pad font size */
+    main p {
+        font-size: 12px;
+    }
+}
+
 @media only screen and (min-width: 800px) { /* desktop only */
     main {
-        width: 70%;
-        margin: 0 10% 0 10%;
+        width: 60%;
+        margin: 0 15% 0 15%;
         padding: 50px 5% 50px 5%;
-        padding-bottom: 100%; /* later vervangen door stretch tot footer */
+        padding-bottom: 25%; /* later vervangen door stretch tot footer */
     }
 }
 

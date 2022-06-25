@@ -16,7 +16,12 @@
     <main>
         <h1>Spel Database</h1>
         <br>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis voluptatem hic ad, laboriosam in vero sequi odio dolores! Deserunt veritatis voluptatem ex qui, porro vitae aspernatur amet neque ducimus! Earum dolore placeat, vero pariatur molestias accusantium. Eaque, voluptate qui! Illo excepturi dolorem velit eligendi iste vel consectetur reiciendis, ipsum, id hic deleniti cupiditate odit dignissimos quam nihil! Pariatur libero cum rem dolorem sapiente, delectus facere impedit totam nulla ut, amet autem nostrum veniam blanditiis facilis, numquam deserunt tempore explicabo labore maiores voluptatibus? Possimus omnis sequi recusandae magnam optio enim amet, deleniti sed ad voluptate expedita? Saepe totam est reiciendis iste?</p>
+        <p>Welkom op onze Spel Database. Deze website is het resultaat van een passieproject van 2 webdevelopers bij Scouts Impeesa. Het biedt een overzicht van allerlei kleine tot grote spelen, waarbij het spel duidelijk wordt uitgelegd. Alles opgespeeld? Bij sommige spelen zal je ook een spel-variant vinden, om elke scoutsvergadering vol variatie te houden. </p>
+        <br>
+        <br>
+        <h1>Niet gevonden wat je zocht?</h1>
+        <br>
+        <p>Heb jij een spel dat nog niet vermeld wordt op deze website, of was jij de ontdekker van een gloednieuw spel dat hier zeker ook vermeld moet worden? Neem dan zeker contact op met ons. Vermeld de <b>naam</b> van het spel, een <b>duidelijke uitleg</b> en eventueel wat extra informatie. (doelgroep, materiaal, varianten...)</p>
     </main>
     <?php include("includes/footer.inc.php"); ?>
 </body>
