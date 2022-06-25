@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@font-face {
+    font-family: 'montserat-bold';
+    src: url(../font/Montserrat-Bold.otf);
+}
+
+@font-face {
+    font-family: 'montserat-regular';
+    src: url(../font/Montserrat-Regular.otf);
+}
+
+body {
+    background-color: #babf21;
+}
+
+main {
+    background-color: #f2eda0;
+    position: relative;
+}
+
+@media only screen and (min-width: 800px) { /* desktop only */
+    main {
+        width: 70%;
+        margin: 0 10% 0 10%;
+        padding: 50px 5% 50px 5%;
+        padding-bottom: 100%; /* later vervangen door stretch tot footer */
+    }
+}
+
+@media only screen and (max-width: 800px) { /* mobile only*/
+    main {
+        width: 100%;
+        padding: 5% 10% 5% 10%;
+    }
+}
