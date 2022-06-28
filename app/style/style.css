@@ -19,6 +19,7 @@ body {
     background-image: url(../images/background.png);
     background-repeat: no-repeat;
     background-position: bottom left;
+    background-attachment: fixed;
 }
 
 main {
@@ -26,37 +27,100 @@ main {
     position: relative;
 }
 
-@media only screen and (max-width: 1000px) { /* i-pad font size */
-    main p {
-        font-size: 12px;
-    }
+.spel-previeuw {
+    margin-bottom: 10px;
+    background-color: #f2b544;
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    padding: 5% 10% 5% 10%;
+    display: block
 }
 
-@media only screen and (min-width: 800px) { /* desktop only */
+.spel-previeuw h2 {
+    font-family: montserat-bold;
+    color:#ffffff;
+}
+
+.spel-previeuw p {
+    font-size: 13px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: #4e55d9;
+    border-radius: 50px;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    margin: 0 5px 5px 0;
+    transition: 0.5s;
+}
+
+.tag:hover {
+    background-color: #6c73ee;
+    transition: 0.5s;
+}
+
+h1 {
+    font-family: montserat-bold;
+}
+
+@media only screen and (min-width: 600px) { /* desktop only */
     main {
         width: 60%;
         margin: 0 15% 0 15%;
-        padding: 50px 5% 50px 5%;
+        padding: 100px 5% 50px 5%;
         min-height: 70vh;
+        display: flex;
+    }
+
+    .spel-content {
+        width: 70%;
+    }
+
+    .andere-spelen {
+        width: 30%;
+        padding-left: 10px;
     }
 
     .spel-img {
-        width: auto;
+        width: 70%;
         height: auto;
         margin: 10px 20px 20px 0;
     }
-
-    .row {
-        display: flex;
-        align-content: flex-start;
-    }
-
-    .img-row {
-        align-items: stretch;
-    }
 }
 
-@media only screen and (max-width: 800px) { /* mobile only*/
+@media only screen and (max-width: 1000px) { /* i-pad overwrites (tussenformaat) */
+    main {
+        width: auto;
+        margin: 0 5% 0 5%;
+        padding: 100px 30px 50px 30px;
+    }
+
+    main p {
+        font-size: 12px;
+    }
+
+    .spel-content {
+        width: 60%;
+    }
+
+    .andere-spelen {
+        width: 40%;
+    }
+
+    .spel-previeuw {
+        width: 90%;
+        padding: 5%;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) { /* mobile only*/
     body {
         background-color: #babf21;
         background-image: none;
@@ -64,7 +128,7 @@ main {
 
     main {
         width: 100%;
-        padding: 5% 10% 5% 10%;
+        padding: 5%;
     }
 
     main p {
@@ -76,5 +140,12 @@ main {
         width: 80%;
         height: auto;
         margin: 5px 0 5px 0;
+    }
+
+    .andere-spelen {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        overflow: hidden;
     }
 }
