@@ -75,6 +75,10 @@ h1 {
     overflow-y: scroll;
 }
 
+.index-container {
+    width: 100%;
+}
+
 @media only screen and (min-width: 600px) { /* desktop only */
     main {
         width: 70%;
@@ -97,6 +101,17 @@ h1 {
         width: 70%;
         height: auto;
         margin: 10px 20px 20px 0;
+    }
+
+    .catalogus {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 20px;
+        padding: 10% 5% 5% 5%;
+    }
+
+    .index-container {
+        padding: 10% 5% 5% 5%;
     }
 }
 
@@ -124,7 +139,10 @@ h1 {
         width: 90%;
         padding: 5%;
     }
-    
+
+    .catalogus {
+        grid-template-columns: repeat(3, auto);
+    } 
 }
 
 @media only screen and (max-width: 600px) { /* mobile only*/
@@ -160,5 +178,24 @@ h1 {
         height: 0;
         width: 0;
         overflow: hidden;
+    }
+
+    .spel-previeuw h2 {
+        font-size: 26px;
+        font-family: montserat-bold;
+        color:#ffffff;
+    }
+
+    .spel-previeuw p {
+        font-size: 18px;
+    }
+
+    .catalogus {
+        padding: 25px 5% 10px 5%;
+    }
+
+    .index-container {
+        width: 100%;
+        padding: 25px 5% 10px 5%;
     }
 }

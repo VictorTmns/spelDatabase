@@ -14,6 +14,8 @@
 <body>
     <?php include("includes/nav.inc.php"); ?>
     <main>
+    <div class="index-container">
+
         <h1>Spel Database</h1>
         <br>
         <p>Welkom op onze Spel Database. Deze website is het resultaat van een passieproject van 2 webdevelopers bij Scouts Impeesa. Het biedt een overzicht van allerlei kleine tot grote spelen, waarbij het spel duidelijk wordt uitgelegd. Alles opgespeeld? Bij sommige spelen zal je ook een spel-variant vinden, om elke scoutsvergadering vol variatie te houden. </p>
@@ -22,6 +24,8 @@
         <h1>Niet gevonden wat je zocht?</h1>
         <br>
         <p>Heb jij een spel dat nog niet vermeld wordt op deze website, of was jij de ontdekker van een gloednieuw spel dat hier zeker ook vermeld moet worden? Neem dan zeker contact op met ons. Vermeld de <b>naam</b> van het spel, een <b>duidelijke uitleg</b> en eventueel wat extra informatie. (doelgroep, materiaal, varianten...)</p>
+        
+    </div>
     </main>
     <?php include("includes/footer.inc.php"); ?>
 </body>
