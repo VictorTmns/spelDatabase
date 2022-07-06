@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 06, 2022 at 08:10 PM
+-- Generation Time: Jul 06, 2022 at 09:34 PM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 8.0.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `spelDatatabase`
+-- Database: `spelDatabase`
 --
 
 -- --------------------------------------------------------
