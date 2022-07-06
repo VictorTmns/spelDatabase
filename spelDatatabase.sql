@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 05, 2022 at 05:10 PM
+-- Generation Time: Jul 06, 2022 at 08:10 PM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 8.0.10
 
@@ -28,11 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `spelen` (
-  `SpelID` varchar(7) NOT NULL,
+  `spelID` varchar(7) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `spelnaam` varchar(63) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `korte beschrijving` varchar(1023) NOT NULL,
-  `lange beschrijving` text NOT NULL,
-  `variant` text CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `beschrijving` varchar(1023) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `goedgekeurd` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='een tafel met alle spellen';
 
@@ -40,9 +38,9 @@ CREATE TABLE `spelen` (
 -- Dumping data for table `spelen`
 --
 
-INSERT INTO `spelen` (`SpelID`, `spelnaam`, `korte beschrijving`, `lange beschrijving`, `variant`, `goedgekeurd`) VALUES
-('Test01', 'een testspelletje', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dapibus diam. Nunc pharetra a urna vel tristique. Sed id dapibus magna. Duis sit amet justo at augue sagittis vulputate sed vitae elit.\r\n', 'Nunc varius, diam id euismod tempor, erat urna tempor orci, fermentum elementum quam dui et eros. Phasellus rhoncus ex massa, ac placerat dolor viverra in. Phasellus placerat nisi erat, non posuere elit ullamcorper nec. Ut sed sagittis nisl. Curabitur eget libero dolor. Fusce blandit volutpat nisi eget pellentesque. Donec facilisis porta mauris, sed imperdiet lorem lobortis congue. Mauris rhoncus diam enim. Nulla convallis dolor elementum nunc posuere, sit amet pulvinar elit fermentum. Donec et leo in nulla bibendum tempus. Quisque vel tellus ut lectus interdum dignissim eu id leo. Proin libero ligula, malesuada non turpis ut, scelerisque dignissim dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc eu quam vitae odio posuere malesuada. In ac venenatis tortor. Suspendisse eleifend neque id nunc tempor, sit amet lobortis eros facilisis.\r\n\r\n', 'Nullam tincidunt semper nunc, sagittis lobortis purus imperdiet non. Fusce faucibus pharetra libero eget consequat. Proin ex turpis, interdum at fermentum eget, faucibus sed est. Duis mollis rhoncus blandit. Phasellus nec efficitur lacus. Praesent pharetra vulputate ornare. Duis ante dui, pretium nec pellentesque at, congue consectetur ante. Duis ornare metus ac lorem suscipit tristique. Pellentesque diam lectus, facilisis nec velit et, tincidunt suscipit justo.\r\n\r\n', 1),
-('Test02', 'een testspelletje2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta tristique vehicula. Ut sit amet dolor lorem. Duis posuere tellus eu erat accumsan placerat. Nam ante augue, blandit vitae ex ut, luctus aliquet dolor. Ut at arcu consequat, vulputate metus nec, fringilla nisi.', 'Curabitur semper elit porta metus porta, non efficitur eros bibendum. Praesent dapibus dolor eget odio rhoncus eleifend. Nunc in purus semper, imperdiet nulla porta, condimentum est. Curabitur scelerisque mauris vel leo sollicitudin, sagittis volutpat odio lacinia. Vestibulum erat orci, porttitor id dui sit amet, efficitur egestas felis. Nunc libero eros, molestie eu ante quis, lacinia sodales ipsum. Morbi porta nulla dolor, eu lacinia erat suscipit id. Nam ornare eros mi, vitae posuere eros blandit quis. Pellentesque enim nisl, posuere vel tempor ut, efficitur sed ante.\r\n\r\n', 'Duis pharetra id justo in viverra. Donec vel ligula est. Morbi orci mi, accumsan vel dui eu, sodales rutrum ante. Maecenas odio massa, mollis vel elit eu, vehicula ultricies sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent fringilla lectus et nisi elementum mattis. Duis porttitor nec diam et tempus. Integer quis laoreet nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi diam nunc, sodales dignissim vestibulum quis, vulputate vel mauris. Etiam sed dictum ante.\r\n\r\n', 1);
+INSERT INTO `spelen` (`spelID`, `spelnaam`, `beschrijving`, `goedgekeurd`) VALUES
+('Test01', 'een testspelletje', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dapibus diam. Nunc pharetra a urna vel tristique. Sed id dapibus magna. Duis sit amet justo at augue sagittis vulputate sed vitae elit.\r\n', 1),
+('Test02', 'een testspelletje2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta tristique vehicula. Ut sit amet dolor lorem. Duis posuere tellus eu erat accumsan placerat. Nam ante augue, blandit vitae ex ut, luctus aliquet dolor. Ut at arcu consequat, vulputate metus nec, fringilla nisi.', 1);
 
 -- --------------------------------------------------------
 
@@ -71,7 +69,7 @@ INSERT INTO `spelFotos` (`spelID`, `fotoFileName`) VALUES
 --
 
 CREATE TABLE `spelTags` (
-  `SpelID` varchar(7) NOT NULL,
+  `spelID` varchar(7) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `tag` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='alle tags dat een bepaalt spel heeft';
 
@@ -79,12 +77,36 @@ CREATE TABLE `spelTags` (
 -- Dumping data for table `spelTags`
 --
 
-INSERT INTO `spelTags` (`SpelID`, `tag`) VALUES
+INSERT INTO `spelTags` (`spelID`, `tag`) VALUES
 ('Test01', '+/- 30 min'),
 ('Test02', '60+ min'),
 ('Test02', 'cirkel'),
 ('Test01', 'lopen'),
 ('Test01', 'nadenken');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `spelUitlegTeksten`
+--
+
+CREATE TABLE `spelUitlegTeksten` (
+  `SpelID` varchar(7) NOT NULL,
+  `tekstID` int NOT NULL,
+  `titel` tinytext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `inhoud` text NOT NULL,
+  `fotoFileName` varchar(127) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `spelUitlegTeksten`
+--
+
+INSERT INTO `spelUitlegTeksten` (`SpelID`, `tekstID`, `titel`, `inhoud`, `fotoFileName`) VALUES
+('Test01', 0, 'een testtitel voor een testspel', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rhoncus rhoncus velit sit amet mollis. Maecenas faucibus dui et lacus ultrices, ut dapibus ante posuere. Morbi sit amet velit ac mauris interdum tincidunt quis sit amet turpis. Etiam dictum imperdiet felis. Sed eros erat, imperdiet at scelerisque id, tincidunt sed arcu. Etiam a felis ac urna ultricies venenatis. Morbi a blandit nisl. Donec vitae lobortis justo. Etiam vel lorem vel tellus dapibus posuere. Mauris pellentesque enim quis felis consequat, vitae dapibus mauris volutpat.\r\n\r\n', 'testFotoVoorTestTekstblok.png'),
+('Test02', 0, 'een testtitel voor een tweede testspel', 'Mauris vulputate pellentesque tortor ac volutpat. Sed tincidunt, sem at scelerisque accumsan, risus lacus ultricies metus, sed rhoncus elit mauris in mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras quam ipsum, vehicula quis venenatis in, finibus nec mauris. Sed maximus ut nisi in posuere. Duis leo sapien, vehicula tempus efficitur sit amet, hendrerit ut mauris. Sed malesuada lectus quam, id vulputate orci mollis et.', 'testFotoVoorTestTekstblok2.png'),
+('Test02', 1, 'dit wordt ooit een mooie titel', 'Cras gravida, justo id facilisis sodales, libero urna euismod risus, at porttitor leo leo non orci. Donec ut dapibus nulla, vitae pretium mi. Fusce lobortis nisi nec viverra vestibulum. Vestibulum eu viverra est. Curabitur vitae porta nulla. Aenean ornare, est et lacinia luctus, justo magna porta odio, sit amet porttitor lacus justo sit amet orci. Nam molestie aliquam facilisis. Nullam sit amet lorem tincidunt, rhoncus odio sit amet, rutrum massa.\r\n\r\n', 'nogZoEenMooieTestFoto.png'),
+('Test02', 2, '', 'Nullam eu sem bibendum, auctor est at, mattis risus. In euismod dictum nunc. Sed ultricies risus sit amet dui blandit, ac suscipit lacus vestibulum. Donec sit amet vestibulum enim. In hac habitasse platea dictumst. Nunc gravida, libero a bibendum ultricies, nibh felis euismod libero, nec pretium arcu augue at orci. Nullam quis blandit felis. Phasellus porta lacinia sapien, et fringilla lorem fermentum a. Donec ac malesuada tortor, vel interdum dolor. Praesent arcu nisi, tristique non finibus eu, accumsan in ligula. Donec elit neque, vestibulum pulvinar est id, porttitor consectetur diam. Cras et felis purus. Nulla facilisi. Donec purus nunc, tempor nec nisl a, rhoncus mollis magna. Nulla facilisi.\r\n\r\n', NULL);
 
 -- --------------------------------------------------------
 
@@ -121,7 +143,7 @@ INSERT INTO `tags` (`tag`) VALUES
 -- Indexes for table `spelen`
 --
 ALTER TABLE `spelen`
-  ADD PRIMARY KEY (`SpelID`);
+  ADD PRIMARY KEY (`spelID`);
 
 --
 -- Indexes for table `spelFotos`
@@ -133,8 +155,15 @@ ALTER TABLE `spelFotos`
 -- Indexes for table `spelTags`
 --
 ALTER TABLE `spelTags`
-  ADD PRIMARY KEY (`SpelID`,`tag`),
+  ADD PRIMARY KEY (`spelID`,`tag`),
   ADD KEY `tag` (`tag`);
+
+--
+-- Indexes for table `spelUitlegTeksten`
+--
+ALTER TABLE `spelUitlegTeksten`
+  ADD PRIMARY KEY (`tekstID`,`SpelID`),
+  ADD KEY `SpelID` (`SpelID`);
 
 --
 -- Indexes for table `tags`
@@ -150,14 +179,20 @@ ALTER TABLE `tags`
 -- Constraints for table `spelFotos`
 --
 ALTER TABLE `spelFotos`
-  ADD CONSTRAINT `spelfotos_ibfk_1` FOREIGN KEY (`spelID`) REFERENCES `spelen` (`SpelID`);
+  ADD CONSTRAINT `spelfotos_ibfk_1` FOREIGN KEY (`spelID`) REFERENCES `spelen` (`spelID`);
 
 --
 -- Constraints for table `spelTags`
 --
 ALTER TABLE `spelTags`
-  ADD CONSTRAINT `speltags_ibfk_1` FOREIGN KEY (`SpelID`) REFERENCES `spelen` (`SpelID`),
+  ADD CONSTRAINT `speltags_ibfk_1` FOREIGN KEY (`spelID`) REFERENCES `spelen` (`spelID`),
   ADD CONSTRAINT `speltags_ibfk_2` FOREIGN KEY (`tag`) REFERENCES `tags` (`tag`);
+
+--
+-- Constraints for table `spelUitlegTeksten`
+--
+ALTER TABLE `spelUitlegTeksten`
+  ADD CONSTRAINT `speluitlegteksten_ibfk_1` FOREIGN KEY (`SpelID`) REFERENCES `spelen` (`spelID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
