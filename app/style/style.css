@@ -31,10 +31,10 @@ main {
     margin-bottom: 10px;
     background-color: #f2b544;
     border-radius: 15px;
-    width: 100%;
+    width: 80%;
     height: auto;
     padding: 5% 10% 5% 10%;
-    display: block
+    display: block;
 }
 
 .spel-previeuw h2 {
@@ -69,22 +69,28 @@ h1 {
     font-family: montserat-bold;
 }
 
+.andere-spelen {
+    background-color: #d8d27c;
+    box-shadow: inset 17px 0px 22px -9px rgba(0,0,0,0.15);
+    overflow-y: scroll;
+}
+
 @media only screen and (min-width: 600px) { /* desktop only */
     main {
-        width: 60%;
+        width: 70%;
         margin: 0 15% 0 15%;
-        padding: 100px 5% 50px 5%;
         min-height: 70vh;
         display: flex;
     }
 
     .spel-content {
         width: 70%;
+        padding: 7% 5% 5% 5%;
     }
 
     .andere-spelen {
         width: 30%;
-        padding-left: 10px;
+        padding: 7% 3% 5% 3%;
     }
 
     .spel-img {
@@ -97,8 +103,7 @@ h1 {
 @media only screen and (max-width: 1000px) { /* i-pad overwrites (tussenformaat) */
     main {
         width: auto;
-        margin: 0 5% 0 5%;
-        padding: 100px 30px 50px 30px;
+        margin: 0 0 0 0;
     }
 
     main p {
@@ -107,10 +112,12 @@ h1 {
 
     .spel-content {
         width: 60%;
+        padding: 100px 15px 10px 15px;
     }
 
     .andere-spelen {
         width: 40%;
+        padding: 100px 15px 5px 15px;
     }
 
     .spel-previeuw {
@@ -128,7 +135,6 @@ h1 {
 
     main {
         width: 100%;
-        padding: 5%;
     }
 
     main p {
@@ -142,7 +148,14 @@ h1 {
         margin: 5px 0 5px 0;
     }
 
+    .spel-content {
+        width: 90%;
+        padding: 25px 5% 10px 5%;
+    }
+
     .andere-spelen {
+        margin: 0;
+        padding: 0;
         visibility: hidden;
         height: 0;
         width: 0;

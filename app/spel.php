@@ -35,7 +35,6 @@
 <div class="andere-spelen">
     <h2>Gelijkaardige Spelen</h2>
     <br>
-    <!-- Spel-Previeuw insert van spelen met gelijkaardige tags? -->
     <div class="spel-previeuw">
         <h2>Trugby</h2>
         <br>
