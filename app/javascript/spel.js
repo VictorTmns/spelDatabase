@@ -12,6 +12,29 @@ function LoadGameContent() {
     request.send(`spelID=${spelID}`);
 }
 
-function gameFetched() {
+function gameFetched(loadEvent) {
+    let response = loadEvent.currentTarget.response;
+    response = JSON.parse(response);
+    console.log(response);
 
+    if (response.fetchSucces == true) {
+        displayContent(response);
+    } else {
+        displayError(response);
+    }
 }
+
+function displayContent(response) {
+    
+}
+
+function displayError(response) {
+    let error = `
+    <div id="errorDisplay">
+    <p>error:</p>
+    <p id="error">${response.error}</p>
+    </div>
+    `;
+    document.getElementsByClassName("spel-content")[0].innerHTML = error;
+}
+

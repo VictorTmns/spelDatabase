@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 07, 2022 at 12:22 AM
+-- Generation Time: Jul 08, 2022 at 04:33 PM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 8.0.10
 
@@ -44,7 +44,8 @@ INSERT INTO `autheurs` (`autheurID`, `voornaam`, `achternaam`, `totem`, `verenig
 (1, 'Geert', 'de tester', 'vogelman', 'de bunsenbranders', 1),
 (2, 'marieke', 'vervoort', 'egel', 'piustien', 0),
 (3, 'Jonas', 'vranken', NULL, NULL, 1),
-(4, 'Frank', 'Sintoor', NULL, NULL, 0);
+(4, 'Frank', 'Sintoor', NULL, NULL, 0),
+(5, 'Edward', 'Vrolijken', 'vogelbekdier', 'de onafhankelijke zoogdieren', 1);
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,7 @@ CREATE TABLE `spelen` (
 --
 
 INSERT INTO `spelen` (`spelID`, `spelnaam`, `beschrijving`, `autheurID`, `goedgekeurd`) VALUES
-('Test01', 'een testspelletje', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dapibus diam. Nunc pharetra a urna vel tristique. Sed id dapibus magna. Duis sit amet justo at augue sagittis vulputate sed vitae elit.\r\n', 2, 1),
+('Test01', 'een testspelletje', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dapibus diam. Nunc pharetra a urna vel tristique. Sed id dapibus magna. Duis sit amet justo at augue sagittis vulputate sed vitae elit.\r\n', 5, 1),
 ('Test02', 'een testspelletje2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta tristique vehicula. Ut sit amet dolor lorem. Duis posuere tellus eu erat accumsan placerat. Nam ante augue, blandit vitae ex ut, luctus aliquet dolor. Ut at arcu consequat, vulputate metus nec, fringilla nisi.', 4, 1),
 ('Test03', 'een splinternieuw testspelletje', 'Nam at vehicula ante. In a dapibus elit. Duis nibh nunc, scelerisque nec erat at, pulvinar interdum ligula. Donec nisi odio, commodo in lacus ac, varius blandit tellus. Proin at ligula sodales, laoreet lorem at, semper lectus. Aliquam ac nisi tincidunt, congue augue sit amet, fringilla neque. Nulla interdum, mi convallis fermentum pharetra, eros nisi lacinia risus, eget volutpat massa eros et purus. Vestibulum magna quam, aliquam et ligula a, laoreet maximus eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non venenatis odio. Integer vel nibh a massa dignissim maximus a id quam. Sed ut lacus nec justo imperdiet eleifend. Pellentesque lobortis quam sit amet interdum cursus. Mauris enim enim, consequat efficitur felis laoreet, ullamcorper convallis nulla.\r\n\r\n', 1, 1),
 ('Test04', 'het spannende testspel', 'Nullam quis sodales est. Aliquam erat volutpat. Aenean mollis mauris velit, non consectetur velit lacinia sed. Vivamus rutrum luctus neque, non euismod diam rhoncus a. Morbi turpis neque, pretium sed nunc non, imperdiet hendrerit quam. Maecenas dignissim orci ut viverra vehicula. Ut ultricies ligula in sagittis bibendum. Praesent at massa viverra, fermentum ante nec, vehicula nunc. Maecenas dignissim a est nec interdum. Integer volutpat lectus at libero pellentesque condimentum. Fusce felis mauris, tempor tristique enim quis, porta mattis orci. Morbi vulputate nisl a nunc egestas, eu luctus tellus varius. Sed lobortis, ex a euismod vulputate, neque elit aliquam felis, vel tincidunt massa risus ut nibh. Aenean urna orci, dignissim eu quam vel, mattis ornare mauris.\r\n\r\n', 3, 1);
@@ -214,17 +215,17 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `autheurs`
 --
 ALTER TABLE `autheurs`
-  MODIFY `autheurID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `autheurID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `autheurs`
+-- Constraints for table `spelen`
 --
-ALTER TABLE `autheurs`
-  ADD CONSTRAINT `autheurs_ibfk_1` FOREIGN KEY (`autheurID`) REFERENCES `spelen` (`autheurID`);
+ALTER TABLE `spelen`
+  ADD CONSTRAINT `spelen_ibfk_1` FOREIGN KEY (`autheurID`) REFERENCES `autheurs` (`autheurID`);
 
 --
 -- Constraints for table `spelFotos`
