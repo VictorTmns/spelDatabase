@@ -17,20 +17,24 @@
 <main>
 
 <div class="spel-content">
-    <h1>Dikke Bertha</h1>
-    <p>Houd jij van overlopen en weglopen van dikke bertha? Ren dan al maar snel weg want dikke bertha komt je halen! In dit spel ren je heen en weer om dikke bertha te ontwijken, en geen gemiddeld amerikaans postuur te krijgen!</p>
-    <img class="spel-img" src="images/dickebertha.png">
-    <img class="spel-img" src="images/dickebertha.png">
-    <h1>Speluitleg</h1>
-    <br>
-    <h2>Lopen</h2>
-    <p>Een essentieel deel van dikke bertha is lopen. Zonder te lopen ben je namelijk nergens, behalve in de armen van DE DIKKE BERTHA. en om dit te vermijden, lopen we. Hoe moet je lopen? Met je benen!</p>
-    <br>
-    <h2>Regels</h2>
-    <p>Het spel is 'vree' simpel. je loopt op signaal naar de andere kant van het speelveld en vermijd de dikke berthas die je proberen te vangen en op te tillen. Lukt dit? Herhaal stap 1. Ben je gevangen? Gefeliciteerd! Je bent zonet verdubbeld in BMI en een officiele mensen vanger geworden.</p>
-    <br>
-    <h2>Varianten</h2>
-    <p>Dat pakken is soms toch maar saai. En ja geef maar toe dat je tijdens het originele spel al hebt zitten tackelen. Dit mag uiteraard niet, maar speciaal voor de tackle-fans hebben wij nu <b>Platte Jan</b>. Hetzelfde spel, maar deze keer met mensen op de grond gooien. PRO TIP: Speel dit op een modderveld voor dubbele fun!</p>
+    <h1 id="titel">
+
+    </h1>
+    <div id="tags">
+
+    </div>
+    <p id="beschrijving">
+
+    </p>
+    <div id="spelFoto"> 
+
+    </div>
+    <ul id="spelUitleg">
+
+    </ul>
+    <div id="autheur">
+        <p>anoniempje</p>
+    </div>
 </div>
 
 <div class="andere-spelen">

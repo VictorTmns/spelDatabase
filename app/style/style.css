@@ -4,6 +4,10 @@
     border: 0;
 }
 
+ul {
+    list-style-type: none;
+}
+
 @font-face {
     font-family: 'montserat-bold';
     src: url(../font/Montserrat-Bold.otf);
@@ -58,6 +62,7 @@ main {
     padding: 5px 10px 5px 10px;
     margin: 0 5px 5px 0;
     transition: 0.5s;
+    display: inline;
 }
 
 .tag:hover {

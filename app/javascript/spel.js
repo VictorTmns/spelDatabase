@@ -26,6 +26,55 @@ function gameFetched(loadEvent) {
 
 function displayContent(response) {
     
+
+    document.getElementById("titel").innerHTML = response.naam;
+
+    
+    let tags = "";
+    for (let i = 0; i < response.spelTagList.length; i++) {
+        let tag = response.spelTagList[i];
+        let tagtItem = `
+            <li class="tag">
+                ${tag}
+            </li>`;
+            tags = tags + tagtItem;
+
+    }
+    document.getElementById("tags").innerHTML = tags;
+
+
+    document.getElementById("beschrijving").innerHTML = response.beschrijving;
+
+
+    if (response.beschrijving !== null) {
+        document.getElementById("spelFoto").innerHTML = `<img class="spel-img" src="images/spelImages/${response.foto}">`
+    }
+
+
+    let spelTeksten = "<h1>uitleg</h1>";
+    for (let i = 0; i < response.spelUitlegTeksten.length; i++) {
+        let spelTekst = response.spelUitlegTeksten[i];
+        let spelTekstItem = "<li>";
+
+        if (spelTekst.titel !== null) {
+            spelTekstItem = spelTekstItem + "<h2>" + spelTekst.titel + "</h2>";
+        }
+        
+        if (spelTekst.foto !== null) {
+            spelTekstItem = spelTekstItem + `<img class="spel-img" src="images/spelImages/` + spelTekst.foto + `"></img>`;
+        }
+
+        spelTekstItem = spelTekstItem + "<p>" + spelTekst.inhoud + "</p>";
+
+        spelTeksten = spelTeksten + spelTekstItem + "</li><br>";
+    }
+
+    if (response.autheur.allowCredits !== "0") {
+        document.getElementById("autheur").innerHTML = `<p> ${response.autheur.voornaam} (${response.autheur.totem})</p>`
+    }
+
+    document.getElementById("spelUitleg").innerHTML = spelTeksten;
+
 }
 
 function displayError(response) {
