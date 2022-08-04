@@ -129,6 +129,13 @@ h1 {
     }
 }
 
+@media only screen and (max-width: 1500px) { /* "The gray zone" overwrites (tussenformaat) */
+
+    .catalogus {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
 @media only screen and (max-width: 1000px) { /* i-pad overwrites (tussenformaat) */
     main {
         width: auto;
