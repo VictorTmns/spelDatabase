@@ -15,23 +15,20 @@
 <body onload="LoadGameContent()">
 <?php include("includes/nav.inc.php"); ?>
 <main>
-
 <div class="spel-content">
+
     <h1 id="titel">
 
     </h1>
-    <div id="tags">
+    <div id="tags"></div>
 
+    <div class="text-image-binder"> <!-- flex container voor text en img -->
+        <p id="beschrijving"></p>
+        <div class="image-binder-wrap" id="spelFoto"></div>
     </div>
-    <p id="beschrijving">
 
-    </p>
-    <div id="spelFoto"> 
+    <ul id="spelUitleg"></ul> <!-- Inserted waardes -->
 
-    </div>
-    <ul id="spelUitleg">
-
-    </ul>
     <div id="autheur">
         <p>anoniempje</p>
     </div>
