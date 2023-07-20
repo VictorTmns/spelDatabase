@@ -6,5 +6,5 @@ ini_set('display_errors', 0);
 
 $servername = "localhost";
 $username = "admin";
-$password = "czs49tn7MKmS";
+$password = "v9Ke5rPTOCqG";
 $dbname = "spelDatabase";
