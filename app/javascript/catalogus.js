@@ -50,6 +50,7 @@ function displayGames(response) {
         let currentGame = response[1][i];
 
         let cardInfo = `
+        <a style="text-decoration:none;color:black;" href="spel.php?spelID=${currentGame.spelID}">
         <div class="spel-previeuw">
         <h2>${currentGame.spelnaam}</h2>
         <br>
@@ -70,7 +71,8 @@ function displayGames(response) {
 
         cardInfo += `
         </div>
-        </div>`;
+        </div>
+        </a>`;
 
 
         pageInfo += cardInfo;

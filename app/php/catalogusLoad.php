@@ -66,7 +66,7 @@ else
         while ($row = $result -> fetch_row()) {
 
 
-            $variableName["SpelID"]= $row[0];
+            $variableName["spelID"]= $row[0];
             $variableName["spelnaam"]= $row[1];
             $variableName["beschrijving"]= $row[2];
 
