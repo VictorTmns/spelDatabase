@@ -46,12 +46,12 @@ function displayContent(response) {
     document.getElementById("beschrijving").innerHTML = response.beschrijving;
 
 
-    if (response.beschrijving !== null) {
+    if (response.foto !== null) {
         document.getElementById("spelFoto").innerHTML = `<img class="spel-img" src="images/spelImages/${response.foto}">`
     }
 
 
-    let spelTeksten = "<h1>uitleg</h1>";
+    let spelTeksten = "<h1>Speluitleg</h1>";
     for (let i = 0; i < response.spelUitlegTeksten.length; i++) {
         let spelTekst = response.spelUitlegTeksten[i];
         let spelTekstItem = "<li>";
@@ -59,12 +59,16 @@ function displayContent(response) {
         if (spelTekst.titel !== null) {
             spelTekstItem = spelTekstItem + "<h2>" + spelTekst.titel + "</h2>";
         }
-        
+
         if (spelTekst.foto !== null) {
-            spelTekstItem = spelTekstItem + `<img class="spel-img" src="images/spelImages/` + spelTekst.foto + `"></img>`;
+            spelTekstItem = spelTekstItem + `<div class="text-image-binder">`;
         }
 
-        spelTekstItem = spelTekstItem + "<p>" + spelTekst.inhoud + "</p>";
+        spelTekstItem = spelTekstItem + `<p>` + spelTekst.inhoud + `</p>`;
+        
+        if (spelTekst.foto !== null) {
+            spelTekstItem = spelTekstItem + `<img class="spelImage" src="images/spelImages/` + spelTekst.foto + `"></img></div>`;
+        }
 
         spelTeksten = spelTeksten + spelTekstItem + "</li><br>";
     }
