@@ -31,8 +31,6 @@ if ($conn->connect_error) {
 
 
 $searchTerm = $_POST['searchTerm'];
-$searchTerm = "een testspelletje";
-//echo $searchTerm;
 
 $getMatchingGames = "
 SELECT spelen.spelID, spelen.spelnaam, spelen.beschrijving

@@ -31,17 +31,52 @@ function Search(changeEvent) {
 function spelenFetched(loadEvent) {
     let response = loadEvent.currentTarget.response;
     response = JSON.parse(response);
-    console.log(response);
 
-    if (response[0] != false) {
-        displayGames();
+
+    document.getElementsByClassName("catalogus")[0].innerHTML = "";
+
+    if (response[0] == true) {
+        displayGames(response);
     } else {
         displayError();
     }
 }
 
-function displayGames() {
+function displayGames(response) {
+    console.log(response[1].length);
 
+    let pageInfo = "";
+    for (let i = 0; i < response[1].length; i++) {
+        let currentGame = response[1][i];
+
+        let cardInfo = `
+        <div class="spel-previeuw">
+        <h2>${currentGame.spelnaam}</h2>
+        <br>
+        <p>${currentGame.beschrijving}</p>
+        <br>
+        <div class="tags">
+        `
+        
+        if(currentGame.spelTagList != null)
+        {
+            for (let j = 0; j < currentGame.spelTagList.length; j++) {
+                const currentTag = currentGame.spelTagList[j];
+                
+                cardInfo += `<div class="tag"><p>${currentTag}</p></div>`;
+            }
+        }
+
+
+        cardInfo += `
+        </div>
+        </div>`;
+
+
+        pageInfo += cardInfo;
+    }
+
+    document.getElementsByClassName("catalogus")[0].innerHTML = pageInfo;
 }
 
 function displayError() {
