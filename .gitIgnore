@@ -1,5 +1,3 @@
 .credentials
 mysql
-
-app/php/secrets.php
 app/php/secrets.php
