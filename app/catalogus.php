@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/nav_footer.css">
     <link rel="stylesheet" href="style/style.css">
+    <script src="javascript/catalogus.js"></script>
     <title>Spel Database</title>
 </head>
-<body>
+<body onload="InitSearchbar();">
 <?php include("includes/nav.inc.php"); ?>
 <main>
 

@@ -5,5 +5,5 @@
         <li><a href="spel.php">Geef me een spel!</a></li>
     </ul>
 
-    <input class="search-bar" type="text" placeholder="Search..">
+    <input class="search-bar" type="text" placeholder="Search.." id="searchbar">
 </nav>

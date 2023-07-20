@@ -102,8 +102,6 @@ if ($spelTags->num_rows == 0) {
 
     die(json_encode($error));
 } else {
-    $spelTags = $spelTags->fetch_assoc();
-
 
     if ($result = $conn -> query($getSpelTags)) {
         while ($row = $result -> fetch_row()) {
